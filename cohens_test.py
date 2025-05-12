@@ -1,4 +1,3 @@
-#Cohens_d Test: 
 import numpy as np
 
 def cohens_d(x, y):
