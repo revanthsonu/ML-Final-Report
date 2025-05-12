@@ -1,5 +1,4 @@
 from scipy import stats
-import numpy as np
 
 def perform_statistical_test(data1, data2, test_type="ttest_ind"):
     """
@@ -22,26 +21,6 @@ def perform_statistical_test(data1, data2, test_type="ttest_ind"):
         print(f"Error: Invalid test type: {test_type}")
         return None, None
 
-def cohens_d(x, y):
-    """
-    Calculates Cohen's d for effect size.
-
-    Args:
-        x (list or numpy array): Sample 1 data.
-        y (list or numpy array): Sample 2 data.
-
-    Returns:
-        float: Cohen's d value.
-    """
-    nx = len(x)
-    ny = len(y)
-    mean_x = np.mean(x)
-    mean_y = np.mean(y)
-    var_x = np.var(x, ddof=1)  # Sample variance (ddof=1 for unbiased estimate)
-    var_y = np.var(y, ddof=1)
-    pooled_var = ((nx - 1) * var_x + (ny - 1) * var_y) / (nx + ny - 2)
-    return (mean_x - mean_y) / np.sqrt(pooled_var)
-
 if __name__ == '__main__':
     # Example Usage:
     # Assume you have collected accuracy data from the baseline and dynamic loading experiments
@@ -57,10 +36,3 @@ if __name__ == '__main__':
 
     print("Comparison between Baseline and Dynamic Loading Experiment 2:")
     print(f"T-statistic: {t_statistic_2}, P-value: {p_value_2}")
-
-    # Calculate Cohen's d
-    effect_size_1 = cohens_d(baseline_accuracy, dynamic_accuracy_1)
-    effect_size_2 = cohens_d(baseline_accuracy, dynamic_accuracy_2)
-
-    print(f"Cohen's d (Baseline vs. Dynamic 1): {effect_size_1}")
-    print(f"Cohen's d (Baseline vs. Dynamic 2): {effect_size_2}")
