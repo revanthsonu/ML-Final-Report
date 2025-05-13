@@ -65,3 +65,5 @@ if __name__ == '__main__':
     print("Loading Times:", loading_times)
     print("Retrieval Times:", retrieval_times)
     plot_performance(data_sizes, loading_times, retrieval_times)
+
+![measure_performance]()
