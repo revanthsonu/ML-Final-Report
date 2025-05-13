@@ -66,4 +66,4 @@ if __name__ == '__main__':
     print("Retrieval Times:", retrieval_times)
     plot_performance(data_sizes, loading_times, retrieval_times)
 
-![measure_performance]()
+![E4C2C1F7-E245-437E-9D8C-40E90DB23E3E](https://github.com/user-attachments/assets/a3691be2-8ced-497a-9c2d-1b6a13e26a63)
